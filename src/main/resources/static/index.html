@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureBank - Premium Banking Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="fas fa-university me-2"></i>
+                <span class="fw-bold">SecureBank</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold text-white mb-4">
+                            Open Your <span class="text-accent">Premium Account</span>
+                            <br>with SecureBank Today
+                        </h1>
+                        <p class="lead text-white-50 mb-5">
+                            Experience world-class banking services with advanced security, 
+                            24/7 support, and innovative digital solutions tailored for your business needs.
+                        </p>
+                        <div class="d-flex gap-3">
+                            <button class="btn btn-accent btn-lg px-4" onclick="showRegistrationForm()">
+                                <i class="fas fa-user-plus me-2"></i>Open Account
+                            </button>
+                            <button class="btn btn-outline-light btn-lg px-4" onclick="showLoginForm()">
+                                <i class="fas fa-sign-in-alt me-2"></i>Login
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="auth-forms">
+                        <!-- Registration Form -->
+                        <div id="registrationForm" class="auth-form">
+                            <div class="card shadow-lg border-0">
+                                <div class="card-header bg-primary text-white text-center py-4">
+                                    <h4 class="mb-0">
+                                        <i class="fas fa-user-plus me-2"></i>Create Your Account
+                                    </h4>
+                                </div>
+                                <div class="card-body p-4">
+                                    <form id="registerForm">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">First Name*</label>
+                                                <input type="text" class="form-control" name="firstName" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">Last Name*</label>
+                                                <input type="text" class="form-control" name="lastName" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label">Email Address*</label>
+                                            <input type="email" class="form-control" name="email" required>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label">Mobile Number*</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">+91</span>
+                                                <input type="tel" class="form-control" name="mobile" pattern="[6-9][0-9]{9}" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label">PAN Number*</label>
+                                            <input type="text" class="form-control" name="pan" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" 
+                                                   placeholder="ABCDE1234F" style="text-transform: uppercase;" required>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label">Password*</label>
+                                            <input type="password" class="form-control" name="password" minlength="8" required>
+                                            <div class="form-text">Minimum 8 characters required</div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label">Entity Type*</label>
+                                            <select class="form-select" name="entityType" required>
+                                                <option value="">Select Entity Type</option>
+                                                <option value="individual">Individual</option>
+                                                <option value="proprietorship">Proprietorship</option>
+                                                <option value="PrivateLtd">Private Ltd & LLP</option>
+                                                <option value="partnership">Partnership</option>
+                                                <option value="huf">HUF</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">Pincode</label>
+                                                <input type="text" class="form-control" name="pincode" pattern="[1-9][0-9]{5}">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">Branch</label>
+                                                <select class="form-select" name="branch">
+                                                    <option value="">Select Branch</option>
+                                                    <option value="mumbai-central">Mumbai Central</option>
+                                                    <option value="delhi-cp">Delhi CP</option>
+                                                    <option value="bangalore-mg">Bangalore MG Road</option>
+                                                    <option value="chennai-tnagar">Chennai T.Nagar</option>
+                                                    <option value="kolkata-saltlake">Kolkata Salt Lake</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="terms" required>
+                                                <label class="form-check-label" for="terms">
+                                                    I authorize SecureBank and its representatives to contact me through phone, 
+                                                    email, SMS and WhatsApp. I also agree to SecureBank's 
+                                                    <a href="#" class="text-primary">Terms & Conditions</a>.
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-primary w-100 btn-lg">
+                                            <i class="fas fa-user-plus me-2"></i>Create Account
+                                        </button>
+                                    </form>
+                                    
+                                    <div class="text-center mt-3">
+                                        <span class="text-muted">Already have an account?</span>
+                                        <a href="#" onclick="showLoginForm()" class="text-primary ms-1">Login here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Login Form -->
+                        <div id="loginForm" class="auth-form" style="display: none;">
+                            <div class="card shadow-lg border-0">
+                                <div class="card-header bg-success text-white text-center py-4">
+                                    <h4 class="mb-0">
+                                        <i class="fas fa-sign-in-alt me-2"></i>Welcome Back
+                                    </h4>
+                                </div>
+                                <div class="card-body p-4">
+                                    <form id="loginFormElement">
+                                        <div class="mb-3">
+                                            <label class="form-label">Email Address</label>
+                                            <input type="email" class="form-control" name="email" required>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <label class="form-label">Password</label>
+                                            <input type="password" class="form-control" name="password" required>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-success w-100 btn-lg">
+                                            <i class="fas fa-sign-in-alt me-2"></i>Login
+                                        </button>
+                                    </form>
+                                    
+                                    <div class="text-center mt-3">
+                                        <span class="text-muted">Don't have an account?</span>
+                                        <a href="#" onclick="showRegistrationForm()" class="text-primary ms-1">Register here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Our Premium Services</h2>
+                    <p class="lead text-muted">Comprehensive banking solutions for every business need</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon bg-primary text-white rounded-circle mb-3 mx-auto">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h5>Digital Banking</h5>
+                            <p class="text-muted">Advanced mobile and internet banking with 24/7 access to your accounts</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon bg-success text-white rounded-circle mb-3 mx-auto">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h5>Secure Transactions</h5>
+                            <p class="text-muted">Bank-grade security with multi-factor authentication and fraud protection</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon bg-warning text-white rounded-circle mb-3 mx-auto">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h5>Business Analytics</h5>
+                            <p class="text-muted">Comprehensive reports and analytics to help grow your business</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alert Messages -->
+    <div id="alertContainer" class="position-fixed top-0 start-50 translate-middle-x" style="z-index: 1050; margin-top: 20px;"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
